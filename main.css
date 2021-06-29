@@ -1,0 +1,112 @@
+body {
+    background-color: #ddd;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14pt;
+}
+
+#content {
+    background-color: #eee;
+    color: #222;
+    max-width: 65rem;
+    min-height: 90vh;
+    margin: 1rem auto;
+    border: 1px solid #666;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+#footer {
+    max-width: 65rem;
+    margin: 0 auto;
+    font-size: 70%;
+    color: #666;
+    padding: 0 2rem;
+}
+
+h1 {
+    font-size: 200%;
+    font-weight: bold;
+    border-bottom: 1px solid;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.2rem;
+}
+
+h2 {
+    font-size: 100%;
+    margin: 0 0 0.5rem 0;
+    color: #666;
+}
+
+.section {
+    margin: 0 0.5rem 1rem 0.5rem;
+}
+
+.section p {
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 4rem;
+}
+
+.employment-period {
+    font-size: 80%;
+    color: #666;
+}
+
+.skill-assessment {
+    font-size: 80%;
+    color: #666;
+}
+
+.columns {
+    display: grid;
+    max-width: 60rem;
+    grid-template-columns: repeat(auto-fill, 20rem);
+}
+
+li {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: inherit;  
+}
+
+@media print {
+    @page {
+        margin-bottom: 1rem;
+    }
+
+    /* Drop the grayscale styling. */
+    * {
+        background-color: #fff !important;
+        color: #000 !important;
+        border: none !important;
+    }
+
+    /* Shrink the grid a little to get 2 columns to fit. */
+    /* TODO this should probably just be 19rem everywhere and/or not hard-coded */
+    .columns {
+        grid-template-columns: repeat(auto-fill, 19rem);
+    }
+
+    /* Suppress the big title. */
+    h1 {
+        display: none;
+    }
+
+    /* Suppress the first sub-header. */
+    h2:first-of-type {
+        display: none;
+    }
+
+    /* Make the copyright notice smaller, and apply it to the bottom of each page. */
+    #footer {
+        font-size: 50%;
+        position: fixed;
+        bottom: 0;
+    }
+
+    p {
+        page-break-inside: avoid;
+    }
+}
